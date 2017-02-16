@@ -5,13 +5,15 @@ import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { SearchPage } from '../pages/search/search';
 import { JsonpModule } from '@angular/http';
+import { PreviewModal } from '../pages/search/preview';
 
 @NgModule({
   declarations: [
     MyApp,
     Page1,
     Page2,
-		SearchPage
+		SearchPage,
+		PreviewModal
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -22,7 +24,8 @@ import { JsonpModule } from '@angular/http';
     MyApp,
     Page1,
     Page2,
-		SearchPage
+		SearchPage,
+		PreviewModal
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
