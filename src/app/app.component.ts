@@ -4,19 +4,20 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
-import { SearchPage } from '../pages/search/search';
-import { HttpModule, JsonpModule }  from '@angular/http';
-
+import {SearchPage} from '../pages/search/search'; //imported this after generating a search page
+import {HttpModule, JsonpModule} from '@angular/http';
 
 
 @Component({
   templateUrl: 'app.html',
-	providers: [HttpModule, JsonpModule]
+  providers:[HttpModule, JsonpModule]
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SearchPage;
+  
+  rootPage: any = SearchPage; //set the default page to the Search page //rootPage: any = Page1;
 
   pages: Array<{title: string, component: any}>;
 
@@ -26,8 +27,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 },
-			{ title: 'Search', component: SearchPage },
+      { title: 'Page Two', component: Page2 }, 
+      {title: 'Search', component:SearchPage} //added this line after importing SearchPage
     ];
 
   }

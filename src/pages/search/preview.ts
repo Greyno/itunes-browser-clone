@@ -2,7 +2,7 @@ import {ViewController, NavController, NavParams} from 'ionic-angular';
 import {Component} from '@angular/core';
 
 @Component({
-	template: `<ion-content padding>
+template:`<ion-content padding>
 			<h2>{{track.trackName}}</h2>
 			<audio [src]="track.previewUrl" *ngIf="track.kind ==='song'" autoplay="autoplay" controls="controls">
 			Browser doesn't support</audio>
@@ -13,14 +13,13 @@ import {Component} from '@angular/core';
 })
 
 export class PreviewModal{
+    public track:any;
 
-	public track:any;
+    constructor(public viewCtrl: ViewController, params:NavParams){
+        this.track = params.data.track;
+    }
 
-	constructor(public viewCtrl: ViewController, params:NavParams){
-		this.track = params.data.track;
-	}
-
-	close(){
-		this.viewCtrl.dismiss();
-	}
+    close(){
+        this.viewCtrl.dismiss();
+    }
 }
